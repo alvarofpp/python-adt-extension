@@ -1,11 +1,12 @@
 import setuptools
 
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="python-adt-extension",
-    version="0.0.1",
+    name="adt_extension",
+    version="0.1.1",
     author="Álvaro Ferreira Pires de Paiva",
     author_email="alvarofepipa@gmail.com",
     description="Python abstract data structure (ADT) extension",
