@@ -2,7 +2,7 @@
 venv/*
 dist/*
 build/*
-adt-extension/__pycache__/*
+adt_extension/__pycache__/*
 site/*
 # Egg metadata
 *.egg-info
