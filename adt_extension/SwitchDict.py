@@ -7,12 +7,10 @@ class SwitchDict(dict):
         self.default_case = None
         super().__init__(seq, **kwargs)
 
-    def set_default_case(self, default_case):
-        """Set value to default_case."""
-        self.default_case = default_case
-
     def __getitem__(self, index):
         try:
             return super(SwitchDict, self).__getitem__(index)
-        except KeyError:
+        except KeyError as err:
+            if self.default_case is None:
+                raise err
             return self.default_case
