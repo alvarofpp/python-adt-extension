@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="adt_extension",
-    version="0.1.0",
+    version="0.1.1",
     author="Álvaro Ferreira Pires de Paiva",
     author_email="alvarofepipa@gmail.com",
     description="Python abstract data structure (ADT) extension",
