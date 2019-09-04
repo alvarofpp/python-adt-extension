@@ -4,10 +4,11 @@ class SwitchDict(dict):
     """
 
     def __init__(self, seq=None, **kwargs):
-        self.default_case = None
+        self.default_case = None  # Switch default case
         super().__init__(seq, **kwargs)
 
     def __getitem__(self, index):
+        """ x.__getitem__(y) <==> x[y] """
         try:
             return super(SwitchDict, self).__getitem__(index)
         except KeyError as err:
