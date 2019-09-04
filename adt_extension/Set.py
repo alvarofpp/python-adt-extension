@@ -18,14 +18,27 @@ class Set(set):
         if (len(args) > 1) or ((self.rule is None) and (self.element_type is None)):
             super(Set, self).add(*args)
         else:
-            # Applies validation rule on arguments
+            # Applies validation rule on argument
             if self._validate(args[0]):
                 super(Set, self).add(*args)
 
     def update(self, *args, **kwargs):
         """Update a set with the union of itself and others.
         """
-        return super(Set, self).update(args)
+        # Check validation rule and type elements exists
+        if (self.rule is None) and (self.element_type is None):
+            super(Set, self).update(*args)
+        else:
+            # Applies validation rule on arguments
+            validate_args = set()
+            for arg in args[0]:
+                if self._validate(arg):
+                    validate_args.add(arg)
+
+            if len(validate_args) == 0:
+                pass
+
+            super(Set, self).update(validate_args)
 
     def _validate(self, element: Any) -> bool:
         """Validate element.
