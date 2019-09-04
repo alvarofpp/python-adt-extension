@@ -4,7 +4,7 @@ from adt_extension import Set
 
 class SwitchDictTest(unittest.TestCase):
     def test_add_int_even(self):
-        """Check add() to even integers."""
+        """Check add() for even integers."""
         # Set
         set_int_even = Set(element_type=int, rule=lambda x: (x % 2 == 0))
         # Elements that satisfies the element type and validation rule
@@ -48,7 +48,7 @@ class SwitchDictTest(unittest.TestCase):
         self.assertTrue(len(set_float) == 3)
 
     def test_update_int_even(self):
-        """Check update() for even numbers."""
+        """Check update() for even integers."""
         # Set
         set_int_even = Set(element_type=int, rule=lambda x: (x % 2 == 0))
         # Elements that satisfies the element type and validation rule
