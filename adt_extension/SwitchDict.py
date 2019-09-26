@@ -5,6 +5,11 @@ class SwitchDict(dict):
 
     def __init__(self, seq=None, **kwargs):
         self.default_case = None  # Switch default case
+
+        # Case "switch_dict = SwitchDict()"
+        if seq is None:
+            seq = {}
+
         super().__init__(seq, **kwargs)
 
     def __getitem__(self, index):
